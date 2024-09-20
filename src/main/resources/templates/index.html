@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A blog</title>
+</head>
+<body>
+    <h1>My blog</h1>
+    <p><a href="/posts/create.html">Create a post</a></p>
+    <ul>
+        {#for post in posts}
+            <li>
+                <a href="/posts/{post.slug}.html">{post.title}</a>
+            </li>
+        {/for}
+    </ul>
+</body>

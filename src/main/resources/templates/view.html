@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{post.title}</title>
+</head>
+<body>
+    <h1>{post.title}</h1>
+    <p>{post.content}</p>
+    <p><a href="/">Back to home</a></p>
+    <form action="/posts/delete/{post.slug}" method="post">
+        <button type="submit">Delete post</button>
+    </form>
+</body>

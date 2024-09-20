@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a post</title>
+</head>
+<body>
+    <h1>Create a post</h1>
+    <form method="POST" action="/posts/">
+        <div>
+            <input type="text" name="author" id="author" placeholder="Author">
+        </div>
+        <div>
+            <input type="text" name="title" id="title" placeholder="Title">
+        </div>
+        <div>
+            <textarea name="content" id="body" cols="30" rows="10" placeholder="Content"></textarea>
+        </div>
+        <button type="submit">Publish</button>
+    </form>
+</body>
