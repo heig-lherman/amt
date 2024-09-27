@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ch.heigvd.amt</groupId>
+        <artifactId>example-reflection</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>builder-example</artifactId>
+
+    <dependencies>
+        <!--
+        The annotation processor must be compiled before it can be used.
+        This is why it is located in another module and listed as a dependency.
+        -->
+        <dependency>
+            <groupId>ch.heigvd.amt</groupId>
+            <artifactId>builder-processor</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <!-- Specify the directory where the generated sources will be stored -->
+                    <generatedSourcesDirectory>${project.build.directory}/generated-sources/</generatedSourcesDirectory>
+                    <!-- Specify the annotation processor to use -->
+                    <annotationProcessors>
+                        <annotationProcessor>ch.heigvd.amt.builder.BuilderProcessor</annotationProcessor>
+                    </annotationProcessors>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
